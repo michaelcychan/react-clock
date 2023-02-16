@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 
-export const Clock = () => {
+export const Clock = (props: { isPrecise: boolean; }) => {
   let intervalID:ReturnType<typeof setInterval>;
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [isPrecise, setIsPrecise] = useState(false);
+  const [isPrecise, setIsPrecise] = useState(props.isPrecise);
 
   const beautifyTime = ():string => {
     let dateNow:string;
@@ -19,16 +19,24 @@ export const Clock = () => {
   }
 
   const updateClock = () => {
-    
     const interval: number = isPrecise ? 200 : 1000;
     intervalID = setInterval(() => {
       setCurrentTime(new Date())
     }, interval)
   }
 
+  const cancelClock = () => {
+    clearInterval(intervalID)
+  }
+
   useEffect(() => {
-    return updateClock()
-  }, [])
+    setIsPrecise(props.isPrecise);
+    updateClock();
+  },[props.isPrecise])
+
+  useEffect(() => {
+    updateClock();
+  },[])
 
   return (
     <div>
