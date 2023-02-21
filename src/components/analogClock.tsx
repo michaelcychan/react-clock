@@ -19,7 +19,7 @@ export const AnalogClock = () => {
   }, [])
 
   const updateAngles = () => {
-    const [hour, minute, second] = currentTime.toLocaleTimeString().split(':');
+    const [hour, minute, second] = currentTime.toLocaleTimeString('en-GB').split(':');
     const sAngle:number = Number(second) * 6;
     const mAngle:number = Number(minute) * 6 + sAngle / 60;
     const hAngle:number = Number(hour) * 30  + mAngle / 60;
