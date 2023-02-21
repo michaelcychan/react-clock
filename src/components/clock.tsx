@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 export const Clock = (props: { isPrecise: boolean; }) => {
-  let intervalID:ReturnType<typeof setInterval>;
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isPrecise, setIsPrecise] = useState(props.isPrecise);
 

@@ -51,7 +51,6 @@
 
 .clock-hand {
   position: absolute;
-  left: 50%;
   transform-origin: 0% 100%;
 }
 
@@ -60,23 +59,22 @@
   height: 120px;
   left: 125px;
   top: 6px;
-  transform: rotate(300deg);
 }
 
 .minute-hand {
-  border-left: 2px solid red;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
   height: 100px;
   left: 125px;
   top: 26px;
-  transform: rotate(36deg);
 }
 
 .hour-hand {
-  border-left: 3px solid blue;
+  border-left: 1px solid blue;
+  border-right: 2px solid blue;
   height: 85px;
-  left: 128px;
-  top: 42px;
-  transform: rotate(200deg);
+  left: 125px;
+  top: 41px;
 }
 
 @keyframes App-logo-spin {
