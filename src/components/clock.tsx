@@ -20,18 +20,18 @@ export const Clock = (props: { isPrecise: boolean; }) => {
 
   const updateClock = () => {
     const interval: number = isPrecise ? 200 : 1000;
-    intervalID = setInterval(() => {
+    const intervalId = setInterval(() => {
       setCurrentTime(new Date())
     }, interval)
-  }
-
-  const cancelClock = () => {
-    clearInterval(intervalID)
+    return intervalId
   }
 
   useEffect(() => {
     setIsPrecise(props.isPrecise);
-    updateClock();
+    const intervalId = updateClock();
+    return () => {
+      clearInterval(intervalId)
+    }
   },[props.isPrecise])
 
   useEffect(() => {

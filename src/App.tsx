@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {ButtonWithProps} from './components/buttonWithProps';
 import {Clock} from './components/clock';
@@ -20,8 +19,21 @@ function App() {
         </h1>
         <Clock isPrecise={toggleToNormal} />
       </header>
-      <button onClick={() => handleClick()}>{toggleToNormal ? "Toggle Normal" : "Toggle Precise"}</button>
-      {/* <ButtonWithProps text={toggleToNormal ? "Toggle Normal" : "Toggle Precise"} onClick={() => handleClick()} /> */}
+      <div className="App-body">
+      
+        <button onClick={() => handleClick()}>{toggleToNormal ? "Toggle Normal" : "Toggle Precise"}</button>
+        {/* <ButtonWithProps text={toggleToNormal ? "Toggle Normal" : "Toggle Precise"} onClick={handleClick} /> */}
+      </div>
+      <footer className='App-footer'>
+
+        <span className="circle">
+          <span className="center-point" />
+          <span className="clock-hand second-hand" />
+          <span className="clock-hand minute-hand" />
+          <span className="clock-hand hour-hand" />
+        </span>
+        
+      </footer>
     </div>
   );
 }

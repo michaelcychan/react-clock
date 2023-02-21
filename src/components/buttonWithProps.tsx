@@ -1,6 +1,8 @@
+import React from "react"
+
 export const ButtonWithProps = (props: {text: string, onClick: Function} ) => {
   return (
-    <button>
+    <button onClick={() =>props.onClick}>
       {props.text}
     </button>
   )

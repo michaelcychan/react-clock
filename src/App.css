@@ -1,11 +1,8 @@
 .App {
   text-align: center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .App-header {
@@ -18,8 +15,68 @@
   color: white;
 }
 
+.App-body {
+  background-color: aqua;
+  height: 50vh;
+}
+
+.App-footer {
+  background-color: beige;
+  min-height: 20vh;
+}
+
 .App-link {
   color: #61dafb;
+  padding: 20px;
+}
+
+.circle {
+  height: 250px;
+  width: 250px;
+  background-color: lightpink;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.circle .center-point {
+  height: 2px;
+  width: 2px;
+  top: 125px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+
+.clock-hand {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 100%;
+}
+
+.second-hand {
+  border-left:1px solid green;
+  height: 120px;
+  left: 125px;
+  top: 6px;
+  transform: rotate(300deg);
+}
+
+.minute-hand {
+  border-left: 2px solid red;
+  height: 100px;
+  left: 125px;
+  top: 26px;
+  transform: rotate(36deg);
+}
+
+.hour-hand {
+  border-left: 3px solid blue;
+  height: 85px;
+  left: 128px;
+  top: 42px;
+  transform: rotate(200deg);
 }
 
 @keyframes App-logo-spin {
@@ -30,3 +87,5 @@
     transform: rotate(360deg);
   }
 }
+
+
