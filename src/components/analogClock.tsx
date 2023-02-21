@@ -22,7 +22,7 @@ export const AnalogClock = () => {
     const [hour, minute, second] = currentTime.toLocaleTimeString().split(':');
     const sAngle:number = Number(second) * 6;
     const mAngle:number = Number(minute) * 6 + sAngle / 60;
-    const hAngle:number = Number(hour) * 30  + mAngle;
+    const hAngle:number = Number(hour) * 30  + mAngle / 60;
 
     setSecondAngle('rotate(' + sAngle.toString() + 'deg)');
     setMinuteAngle('rotate(' + mAngle.toString() + 'deg)');
